@@ -1,12 +1,9 @@
-<!-- 
-* Copyright 2016 Carlos Eduardo Alfaro Orellana
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Providers</title>
+	<title>Proveedores</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/sweetalert2.css">
 	<link rel="stylesheet" href="css/material.min.css">
@@ -99,7 +96,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="providers.html" class="full-width">
+								<a href="categories.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-truck"></i>
 									</div>
@@ -109,7 +106,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="categories.html" class="full-width">
+								<a href="subcategories.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-label"></i>
 									</div>
@@ -119,7 +116,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="providers.html" class="full-width">
+								<a href="state.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-truck"></i>
 									</div>
@@ -129,7 +126,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="providers.html" class="full-width">
+								<a href="sale-type.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-truck"></i>
 									</div>
@@ -174,60 +171,45 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+					El proveedor contiene los datos de este ademas de una descripcion en la cual van las paginas que este maneja.
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
-				<a href="#tabNewProvider" class="mdl-tabs__tab is-active">NEW</a>
-				<a href="#tabListProvider" class="mdl-tabs__tab">LIST</a>
+				<a href="#tabNewProvider" class="mdl-tabs__tab is-active">NUEVO</a>
+				<a href="#tabListProvider" class="mdl-tabs__tab">LISTA</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewProvider">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								New Provider
+								NUEVO PROVEEDOR
 							</div>
 							<div class="full-width panel-content">
 								<form>
-									<h5 class="text-condensedLight">Data provider</h5>
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIProvider">
-										<label class="mdl-textfield__label" for="DNIProvider">DNI</label>
-										<span class="mdl-textfield__error">Invalid number</span>
-									</div>
+									<h5 class="text-condensedLight">Proveedor</h5>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9 ]*(\.[0-9]+)?" id="NameProvider">
-										<label class="mdl-textfield__label" for="NameProvider">Name</label>
-										<span class="mdl-textfield__error">Invalid name</span>
-									</div>
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="text" id="addressProvider">
-										<label class="mdl-textfield__label" for="addressProvider">Address</label>
-										<span class="mdl-textfield__error">Invalid address</span>
+										<label class="mdl-textfield__label" for="NameProvider">Nombre</label>
+										<span class="mdl-textfield__error">Nombre invalido</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneProvider">
-										<label class="mdl-textfield__label" for="phoneProvider">Phone</label>
-										<span class="mdl-textfield__error">Invalid phone number</span>
-									</div>
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-										<input class="mdl-textfield__input" type="email" id="emailProvider">
-										<label class="mdl-textfield__label" for="emailProvider">E-mail</label>
-										<span class="mdl-textfield__error">Invalid E-mail</span>
+										<label class="mdl-textfield__label" for="phoneProvider">Telefono</label>
+										<span class="mdl-textfield__error">Telefono invalido</span>
 									</div>
 									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 										<input class="mdl-textfield__input" type="text" id="webProvider">
-										<label class="mdl-textfield__label" for="webProvider">Web</label>
-										<span class="mdl-textfield__error">Invalid web address</span>
+										<label class="mdl-textfield__label" for="webProvider">Pagina Web</label>
+										<span class="mdl-textfield__error">Enlace invalido</span>
 									</div>
 									<p class="text-center">
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addProvider">Add provider</div>
+										<div class="mdl-tooltip" for="btn-addProvider">Añadir Proveedor</div>
 									</p>
 								</form>
 							</div>
@@ -240,7 +222,7 @@
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-success text-center tittles">
-								List Providers
+								Lista de Proveedores
 							</div>
 							<div class="full-width panel-content">
 								<form action="#">
