@@ -1,21 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<script>
-	function required()
-{
-var empt = document.forms["form1"]["text1"].value;
-if (empt == "")
-{
-alert("Porfavor, Inserte sus datos");
-return false;
-}
-else 
-{
-alert("Porfavor, Inserte sus datos1");
-return true; 
-}
-}
-</script>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,22 +23,23 @@ return true;
 			<i class="zmdi zmdi-account-circle"></i>
 		</p>
 		<p class="text-center text-condensedLight">Logeate con tu cuenta</p>
-		<form name="form1" action="{{ url_for('login') }}" method= "POST" onsubmit= "required()" >
+		<form>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    <input class="mdl-textfield__input" name ='text1' type="text" id="userName">
+			    <input class="mdl-textfield__input" type="text" id="userName">
 			    <label class="mdl-textfield__label" for="userName">Usuario</label>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    <input class="mdl-textfield__input" name ='text1' type="password" id="pass">
+			    <input class="mdl-textfield__input" type="password" id="pass">
 			    <label class="mdl-textfield__label" for="pass">Contraseña</label>
 			</div>
-			<button id="SingIn" name="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
-				Ingresar <i class="zmdi zmdi-mail-send"></i>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			    <input class="mdl-textfield__input" type="text" id="email">
+			    <label class="mdl-textfield__label" for="userName">E-Mail</label>
+			</div>
+			<button id="SingIn" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
+				Crear cuenta <i class="zmdi zmdi-mail-send"></i>
 			</button>
 		</form>
-		<a id="Register" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="register.html" style="color: #3F51B5; float:right;">
-			Registrarse <i class="zmdi zmdi-mail-send"></i>
-		</a>
 	</div>
 </body>
 </html>
