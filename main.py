@@ -58,9 +58,10 @@ def register():
             cursor.execute('INSERT INTO admin VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
             msg = 'Esta registrado en la base de datos'
-    elif request.method == 'POST':
+    elif request.method == 'GET':
         msg = 'Porfavor rellene la forma'
     return render_template('register.html', msg=msg)
+
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
