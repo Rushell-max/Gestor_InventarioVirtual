@@ -11,9 +11,10 @@ app.config['MYSQL_DB'] = 'inventoryflask'
 
 mysql = MySQL(app)
 
+
 @app.route('/inventoryflask/', methods=['GET', 'POST'])
 def login():
-    msg = 'Error en el sistema'
+    msg = ' '
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
@@ -24,10 +25,10 @@ def login():
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
-            return 'Logeo concedido'
+            return redirect(url_for('home'))
         else:
             msg = 'Datos incorrectos'
-    return render_template('index.html', msg='')
+    return render_template('index.html', msg=msg)
 
 @app.route('/inventoryflask/logout')
 def logout():
@@ -58,9 +59,19 @@ def register():
             cursor.execute('INSERT INTO admin VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
             msg = 'Esta registrado en la base de datos'
-    elif request.method == 'GET':
+    elif request.method == 'POST':
         msg = 'Porfavor rellene la forma'
     return render_template('register.html', msg=msg)
+
+
+@app.route('/pythonlogin/home')
+def home():
+    if 'loggedin' in session:
+        return render_template('home.html', username=session['username'])
+    return redirect(url_for('login'))
+
+
+
 
 
 if __name__ == "__main__":

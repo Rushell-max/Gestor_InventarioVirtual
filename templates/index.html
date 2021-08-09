@@ -23,7 +23,7 @@
 			<i class="zmdi zmdi-account-circle"></i>
 		</p>
 		<p class="text-center text-condensedLight">Logeate con tu cuenta</p>
-		<form name="form1" action="{{ url_for('login') }}" method= "POST" autocomplete="off">
+		<form action="{{ url_for('login') }}" method= "post" autocomplete="off">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			    <input class="mdl-textfield__input" name ='username' type="text" id="username">
 			    <label class="mdl-textfield__label" for="username">Usuario</label>
@@ -32,12 +32,12 @@
 			    <input class="mdl-textfield__input" name ='password' type="password" id="password">
 			    <label class="mdl-textfield__label" for="password">Contraseña</label>
 			</div>
-			<p class="msg">{{ msg }}</p>
-			<button id="SingIn" name="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
+			<div class="msg">{{ msg }}</div>
+			<button type="submit" value="Login" id="SingIn" name="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; float:right;">
 				Ingresar <i class="zmdi zmdi-mail-send"></i>
 			</button>
 		</form>
-		<a id="Register" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="/register" style="color: #3F51B5; float:right;">
+		<a id="Register" class="mdl-button mdl-js-button mdl-js-ripple-effect" href="/inventoryflask/register" style="color: #3F51B5; float:right;">
 			Registrarse <i class="zmdi zmdi-mail-send"></i>
 		</a>
 	</div>
