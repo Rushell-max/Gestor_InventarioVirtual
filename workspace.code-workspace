@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "..\\test-01"
+			"path": "."
 		},
 		{
-			"path": "."
+			"path": "..\\test-01"
 		},
 		{
 			"path": "..\\flask-crud-contacts-app-master"
