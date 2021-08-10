@@ -28,15 +28,16 @@
 							Nueva Marca
 						</div>
 						<div class="full-width panel-content">
-							<form>
+							<form action="{{ url_for('company') }}" method= "post" autocomplete="off">
 								<h5 class="text-condensedLight">Categoria de Marcas</h5>
 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-									<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCategory">
-									<label class="mdl-textfield__label" for="NameCategory">Nombre</label>
+									<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCategory" name="nombre">
+									<label class="mdl-textfield__label" for="NameCategory" >Nombre</label>
 									<span class="mdl-textfield__error">Nombre Invalido</span>
+									<div class="msg">{{ msg }}</div>
 								</div>
 								<p class="text-center">
-									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCategory">
+									<button type="submit" value="Register" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCategory">
 										<i class="zmdi zmdi-plus"></i>
 									</button>
 									<div class="mdl-tooltip" for="btn-addCategory">Añadir Marca</div>

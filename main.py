@@ -73,14 +73,29 @@ def home():
 
 @app.route('/inventoryflask/categories')
 def categories():
+    msg = ''
     if 'loggedin' in session:
-        return render_template('categories.html', username=session['username'])
+        if request.method == 'POST' and 'nombre' in request.form:
+            nombre = request.form['nombre']
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM marcas)
+            cursor.execute('INSERT INTO marcas VALUES (NULL, %s, " ", " ")', [nombre])
+            mysql.connection.commit()
+            msg = 'Esta registrado en la base de datos'
+        return render_template('company.html', username=session['username'], msg=msg)
     return redirect(url_for('login'))
 
-@app.route('/inventoryflask/company')
+@app.route('/inventoryflask/company', methods=['GET', 'POST'])
 def company():
+    msg = ''
     if 'loggedin' in session:
-        return render_template('company.html', username=session['username'])
+        if request.method == 'POST' and 'nombre' in request.form:
+            nombre = request.form['nombre']
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('INSERT INTO marcas VALUES (NULL, %s, " ", " ")', [nombre])
+            mysql.connection.commit()
+            msg = 'Esta registrado en la base de datos'
+        return render_template('company.html', username=session['username'], msg=msg)
     return redirect(url_for('login'))
 
 @app.route('/inventoryflask/products')
