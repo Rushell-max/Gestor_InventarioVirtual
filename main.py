@@ -11,6 +11,8 @@ app.config['MYSQL_DB'] = 'inventoryflask'
 
 mysql = MySQL(app)
 
+app.secret_key = "mysecretkey"
+
 
 @app.route('/inventoryflask/', methods=['GET', 'POST'])
 def login():
@@ -63,15 +65,53 @@ def register():
         msg = 'Porfavor rellene la forma'
     return render_template('register.html', msg=msg)
 
-
-@app.route('/pythonlogin/home')
+@app.route('/inventoryflask/home')
 def home():
     if 'loggedin' in session:
         return render_template('home.html', username=session['username'])
     return redirect(url_for('login'))
 
+@app.route('/inventoryflask/categories')
+def categories():
+    if 'loggedin' in session:
+        return render_template('categories.html', username=session['username'])
+    return redirect(url_for('login'))
 
+@app.route('/inventoryflask/company')
+def company():
+    if 'loggedin' in session:
+        return render_template('company.html', username=session['username'])
+    return redirect(url_for('login'))
 
+@app.route('/inventoryflask/products')
+def products():
+    if 'loggedin' in session:
+        return render_template('products.html', username=session['username'])
+    return redirect(url_for('login'))
+
+@app.route('/inventoryflask/providers')
+def providers():
+    if 'loggedin' in session:
+        return render_template('providers.html', username=session['username'])
+    return redirect(url_for('login'))
+
+@app.route('/inventoryflask/saletype')
+def saletype():
+    if 'loggedin' in session:
+        return render_template('sale-type.html', username=session['username'])
+    return redirect(url_for('login'))
+
+@app.route('/inventoryflask/state')
+def state():
+    if 'loggedin' in session:
+        return render_template('state.html', username=session['username'])
+    return redirect(url_for('login'))
+
+@app.route('/inventoryflask/subcategories')
+def subcategories():
+    if 'loggedin' in session:
+        return render_template('subcategories.html', username=session['username'])
+    return redirect(url_for('login'))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/normalize.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/sweetalert2.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/material.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/material-design-iconic-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/jquery.mCustomScrollbar.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="{{url_for('static', filename='js/material.min.js')}}" ></script>
+	<script src="{{url_for('static', filename='js/sweetalert2.min.js')}}" ></script>
+	<script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js')}}" ></script>
+	<script src="{{url_for('static', filename='js/main.js')}}" ></script>
+</head>
+<body>
+	<!-- navBar -->
+	<div class="full-width navBar">
+		<div class="full-width navBar-options">
+			<i class="zmdi zmdi-more-vert btn-menu" id="btn-menu"></i>	
+			<div class="mdl-tooltip" for="btn-menu">Menu</div>
+			<nav class="navBar-options-list">
+				<ul class="list-unstyle">
+					<a href="{{ url_for('logout') }}" ><i class="zmdi zmdi-power"></i></a>
+					<li class="text-condensedLight noLink" ><small>{{ username }}</small></li>
+					<li class="noLink">
+						<figure>
+							<img src="{{url_for('static', filename='assets/img/avatar-male.png')}}" alt="Avatar" class="img-responsive">
+						</figure>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- navLateral -->
+	<section class="full-width navLateral">
+		<div class="full-width navLateral-bg btn-menu"></div>
+		<div class="full-width navLateral-body">
+			<div class="full-width navLateral-body-logo text-center tittles">
+				<i class="zmdi zmdi-close btn-menu"></i> Inventory 
+			</div>
+			<figure class="full-width" style="height: 77px;">
+				<div class="navLateral-body-cl">
+					<img src="{{url_for('static', filename='assets/img/avatar-male.png')}}" alt="Avatar" class="img-responsive">
+				</div>
+				<figcaption class="navLateral-body-cr hide-on-tablet">
+					<span>
+						{{ username }}<br>
+						<small>Admin</small>
+					</span>
+				</figcaption>
+			</figure>
+			<div class="full-width tittles navLateral-body-tittle-menu">
+				<i class="zmdi zmdi-desktop-mac"></i><span class="hide-on-tablet">&nbsp; CONSOLA</span>
+			</div>
+			<nav class="full-width">
+				<ul class="full-width list-unstyle menu-principal">
+					<li class="full-width">
+						<a href="{{ url_for('home') }}" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-view-dashboard"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								INICIO
+							</div>
+						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-case"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								ADMINISTRAR
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="{{ url_for('company') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-balance"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										MARCAS
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="{{ url_for('categories') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										LINEA
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="{{ url_for('subcategories') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-label"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										SUBCATEGORIA
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="{{ url_for('state') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										ESTADO
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="{{ url_for('saletype') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										TIPO DE VENTA
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="{{ url_for('providers') }}" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr hide-on-tablet">
+										VENDEDOR
+									</div>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="{{ url_for('products') }}" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-washing-machine"></i>
+							</div>
+							<div class="navLateral-body-cr hide-on-tablet">
+								ELEMENTOS
+							</div>
+						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+	<!-- pageContent -->
+	{% block content %}{% endblock %}
+</body>
+</html>
